@@ -181,7 +181,11 @@ function DeploymentCard({ deployment, onDelete }) {
             {deployment.errorMessage && (
               <div className="detail-item full-width error-detail">
                 <span className="detail-label">Error</span>
-                <span className="detail-value error-text">{deployment.errorMessage}</span>
+                <span className="detail-value error-text">
+                  {typeof deployment.errorMessage === "object"
+                    ? (deployment.errorMessage.message || JSON.stringify(deployment.errorMessage))
+                    : String(deployment.errorMessage)}
+                </span>
               </div>
             )}
           </div>
