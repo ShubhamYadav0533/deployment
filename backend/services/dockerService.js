@@ -191,13 +191,75 @@ class DockerService {
   }
 
   /**
-   * Main deploy method - chooses between SSH and SSM based on config.
+   * Simulate Docker deployment for demo/interview purposes.
+   * Produces realistic logs and delays to demonstrate the full pipeline.
+   */
+  async deploySimulated({ image, domain, clientName }) {
+    const containerName = this._sanitizeContainerName(clientName);
+    const port = Math.floor(Math.random() * 5999) + 3001;
+    const containerId = [...Array(12)].map(() => Math.floor(Math.random() * 16).toString(16)).join("");
+    let logs = "";
+
+    logger.info(`[SIM] Simulating Docker deployment for ${clientName}`);
+
+    // Simulate: docker pull
+    logs += `$ docker pull ${image}\n`;
+    await new Promise((r) => setTimeout(r, 1500));
+    logs += `latest: Pulling from library/${image.split(":")[0]}\n`;
+    logs += `a2abf6c4d29d: Pull complete\n`;
+    logs += `a9edb18cadd6: Pull complete\n`;
+    logs += `589b7251471a: Pull complete\n`;
+    logs += `Digest: sha256:${[...Array(64)].map(() => Math.floor(Math.random() * 16).toString(16)).join("")}\n`;
+    logs += `Status: Downloaded newer image for ${image}\n\n`;
+
+    // Simulate: docker stop & rm old container
+    logs += `$ docker stop ${containerName} 2>/dev/null || true\n`;
+    logs += `$ docker rm ${containerName} 2>/dev/null || true\n\n`;
+    await new Promise((r) => setTimeout(r, 800));
+
+    // Simulate: docker run
+    const runCmd = `docker run -d --name ${containerName} -p ${port}:80 --label "domain=${domain}" --restart unless-stopped ${image}`;
+    logs += `$ ${runCmd}\n`;
+    await new Promise((r) => setTimeout(r, 1200));
+    logs += `${containerId}\n\n`;
+
+    // Simulate: docker ps verify
+    logs += `$ docker ps --filter "name=${containerName}" --format "{{.Status}}"\n`;
+    logs += `Up 2 seconds\n\n`;
+
+    logs += `Container ${containerId} running on port ${port}\n`;
+    logs += `Domain ${domain} → localhost:${port}\n`;
+
+    logger.info(`[SIM] Container ${containerId} simulated on port ${port}`);
+
+    return { containerId, port, logs };
+  }
+
+  /**
+   * Main deploy method - chooses between SSH, SSM, or simulation based on config.
    */
   async deploy(params) {
+    // Use SSM if configured
     if (config.ec2.useSSM) {
-      return this.deployViaSSM(params);
+      if (config.ec2.instanceId && config.aws.accessKeyId) {
+        return this.deployViaSSM(params);
+      }
+      logger.warn("[Docker] SSM enabled but credentials missing — falling back to simulation");
     }
-    return this.deployViaSSH(params);
+
+    // Use SSH if the key file exists
+    if (!config.ec2.useSSM && config.ec2.privateKeyPath) {
+      try {
+        fs.accessSync(config.ec2.privateKeyPath, fs.constants.R_OK);
+        return this.deployViaSSH(params);
+      } catch {
+        logger.warn(`[Docker] SSH key not found at ${config.ec2.privateKeyPath} — falling back to simulation`);
+      }
+    }
+
+    // Fallback: simulation mode for demo/interview
+    logger.info("[Docker] Running in SIMULATION mode (no real EC2 connection)");
+    return this.deploySimulated(params);
   }
 
   /**

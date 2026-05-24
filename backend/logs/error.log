@@ -171,3 +171,54 @@ Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
 2026-05-24 19:28:51 [ERROR] [Worker] Job 6a13041325faa97aee1f5022 failed:
+2026-05-24 19:34:24 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:24 [ERROR] [Worker] ❌ Deployment 6a130568939b050e9d4cd2a3 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:24 [ERROR] [Worker] Job 6a130568939b050e9d4cd2a3 failed:
+2026-05-24 19:34:27 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:27 [ERROR] [Worker] ❌ Deployment 6a130568939b050e9d4cd2a3 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:27 [ERROR] [Worker] Job 6a130568939b050e9d4cd2a3 failed:
+2026-05-24 19:34:31 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:32 [ERROR] [Worker] ❌ Deployment 6a130568939b050e9d4cd2a3 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:32 [ERROR] [Worker] Job 6a130568939b050e9d4cd2a3 failed:

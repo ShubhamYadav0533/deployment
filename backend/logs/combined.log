@@ -230,3 +230,106 @@ Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
 2026-05-24 19:28:51 [ERROR] [Worker] Job 6a13041325faa97aee1f5022 failed:
+2026-05-24 19:31:08 [INFO] Deploy queue initialized
+2026-05-24 19:31:08 [INFO] Connecting to primary MongoDB...
+2026-05-24 19:31:19 [INFO] ✅ Connected to MongoDB
+2026-05-24 19:31:19 [INFO] ✅ API Server running on http://localhost:5000
+2026-05-24 19:32:10 [INFO] Deploy queue initialized
+2026-05-24 19:32:10 [INFO] Connecting to primary MongoDB...
+2026-05-24 19:32:19 [INFO] ✅ Connected to MongoDB
+2026-05-24 19:32:19 [INFO] ✅ API Server running on http://localhost:5000
+2026-05-24 19:33:45 [DEBUG] GET /api/deployments
+2026-05-24 19:33:48 [DEBUG] GET /api/deployments
+2026-05-24 19:34:23 [DEBUG] POST /api/deploy
+2026-05-24 19:34:24 [INFO] [API] Deployment created: 6a130568939b050e9d4cd2a3 for mukesthapa  (mukeshthapa.com)
+2026-05-24 19:34:24 [INFO] [Worker] Processing job: 6a130568939b050e9d4cd2a3 | Deployment: 6a130568939b050e9d4cd2a3
+2026-05-24 19:34:24 [INFO] [API] Job queued: 6a130568939b050e9d4cd2a3
+2026-05-24 19:34:24 [DEBUG] GET /api/deployments
+2026-05-24 19:34:24 [INFO] [Worker] Deploying Docker container: nginx:latest
+2026-05-24 19:34:24 [INFO] [SSH] Connecting to EC2: 13.233.198.197
+2026-05-24 19:34:24 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:24 [ERROR] [Worker] ❌ Deployment 6a130568939b050e9d4cd2a3 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:24 [ERROR] [Worker] Job 6a130568939b050e9d4cd2a3 failed:
+2026-05-24 19:34:26 [INFO] [Worker] Processing job: 6a130568939b050e9d4cd2a3 | Deployment: 6a130568939b050e9d4cd2a3
+2026-05-24 19:34:27 [INFO] [Worker] Deploying Docker container: nginx:latest
+2026-05-24 19:34:27 [INFO] [SSH] Connecting to EC2: 13.233.198.197
+2026-05-24 19:34:27 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:27 [ERROR] [Worker] ❌ Deployment 6a130568939b050e9d4cd2a3 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:27 [ERROR] [Worker] Job 6a130568939b050e9d4cd2a3 failed:
+2026-05-24 19:34:27 [DEBUG] GET /api/deployments
+2026-05-24 19:34:31 [INFO] [Worker] Processing job: 6a130568939b050e9d4cd2a3 | Deployment: 6a130568939b050e9d4cd2a3
+2026-05-24 19:34:31 [INFO] [Worker] Deploying Docker container: nginx:latest
+2026-05-24 19:34:31 [INFO] [SSH] Connecting to EC2: 13.233.198.197
+2026-05-24 19:34:31 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:32 [ERROR] [Worker] ❌ Deployment 6a130568939b050e9d4cd2a3 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:34:32 [ERROR] [Worker] Job 6a130568939b050e9d4cd2a3 failed:
+2026-05-24 19:35:35 [INFO] Shutting down worker...
+2026-05-24 19:35:38 [INFO] Worker connecting to primary MongoDB...
+2026-05-24 19:35:42 [INFO] ✅ Worker connected to MongoDB
+2026-05-24 19:35:42 [INFO] ✅ Worker listening for deployment jobs...
+2026-05-24 19:35:49 [DEBUG] GET /api/deployments
+2026-05-24 19:35:57 [DEBUG] DELETE /api/deployments/6a130568939b050e9d4cd2a3
+2026-05-24 19:35:58 [INFO] [API] Deployment deleted: 6a130568939b050e9d4cd2a3
+2026-05-24 19:35:58 [DEBUG] GET /api/deployments
+2026-05-24 19:36:04 [DEBUG] DELETE /api/deployments/6a13041325faa97aee1f5022
+2026-05-24 19:36:04 [INFO] [API] Deployment deleted: 6a13041325faa97aee1f5022
+2026-05-24 19:36:04 [DEBUG] GET /api/deployments
+2026-05-24 19:36:19 [DEBUG] POST /api/deploy
+2026-05-24 19:36:19 [INFO] [API] Deployment created: 6a1305db939b050e9d4cd2ad for sureshthapa (sureshthapa.com)
+2026-05-24 19:36:19 [INFO] [API] Job queued: 6a1305db939b050e9d4cd2ad
+2026-05-24 19:36:19 [INFO] [Worker] Processing job: 6a1305db939b050e9d4cd2ad | Deployment: 6a1305db939b050e9d4cd2ad
+2026-05-24 19:36:19 [DEBUG] GET /api/deployments
+2026-05-24 19:36:19 [INFO] [Worker] Deploying Docker container: nginx:latest
+2026-05-24 19:36:19 [WARN] [Docker] SSH key not found at ./keys/ec2-key.pem — falling back to simulation
+2026-05-24 19:36:19 [INFO] [Docker] Running in SIMULATION mode (no real EC2 connection)
+2026-05-24 19:36:19 [INFO] [SIM] Simulating Docker deployment for sureshthapa
+2026-05-24 19:36:22 [DEBUG] GET /api/deployments
+2026-05-24 19:36:23 [INFO] [SIM] Container 22197f40355a simulated on port 6247
+2026-05-24 19:36:24 [INFO] [Worker] Triggering Lambda function
+2026-05-24 19:36:24 [INFO] [Lambda] Invoking function: post-deployment-setup
+2026-05-24 19:36:26 [INFO] [Lambda] Function executed. Status: 200
+2026-05-24 19:36:26 [DEBUG] GET /api/deployments
+2026-05-24 19:36:26 [INFO] [Worker] ✅ Deployment 6a1305db939b050e9d4cd2ad completed successfully
+2026-05-24 19:36:26 [INFO] [Worker] Job 6a1305db939b050e9d4cd2ad completed
