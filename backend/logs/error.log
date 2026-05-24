@@ -222,3 +222,15 @@ Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
     at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
 2026-05-24 19:34:32 [ERROR] [Worker] Job 6a130568939b050e9d4cd2a3 failed:
+2026-05-25 00:12:25 [ERROR] [API] Deployments list error: Operation interrupted because client was closed
+MongoClientClosedError: Operation interrupted because client was closed
+    at ConnectionPool.closeCheckedOutConnections (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection_pool.js:260:26)
+    at Server.closeCheckedOutConnections (/home/shubham/deployment/backend/node_modules/mongodb/lib/sdam/server.js:111:26)
+    at Topology.closeCheckedOutConnections (/home/shubham/deployment/backend/node_modules/mongodb/lib/sdam/topology.js:222:27)
+    at MongoClient._close (/home/shubham/deployment/backend/node_modules/mongodb/lib/mongo_client.js:348:24)
+    at MongoClient.close (/home/shubham/deployment/backend/node_modules/mongodb/lib/mongo_client.js:331:35)
+    at NativeConnection.doClose (/home/shubham/deployment/backend/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:208:21)
+    at NativeConnection._close (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1264:18)
+    at NativeConnection.close (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1229:15)
+    at /home/shubham/deployment/backend/node_modules/mongoose/lib/mongoose.js:471:60
+    at Array.map (<anonymous>)

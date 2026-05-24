@@ -238,6 +238,21 @@ function DeploymentCard({ deployment, onDelete }) {
 }
 
 function DeploymentList({ deployments, loading, onRefresh }) {
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const handleRefresh = async () => {
+    if (isRefreshing) return;
+    setIsRefreshing(true);
+    try {
+      await onRefresh();
+    } finally {
+      // Keep it spinning for 800ms for a beautiful UI micro-animation feel
+      setTimeout(() => {
+        setIsRefreshing(false);
+      }, 800);
+    }
+  };
+
   return (
     <div className="card dashboard-card">
       <div className="card-header">
@@ -250,12 +265,17 @@ function DeploymentList({ deployments, loading, onRefresh }) {
             {deployments.length} deployment{deployments.length !== 1 ? "s" : ""}
           </p>
         </div>
-        <button className="btn-refresh" onClick={onRefresh} title="Refresh">
-          <FiRefreshCw size={16} />
+        <button 
+          className="btn-refresh" 
+          onClick={handleRefresh} 
+          title="Refresh"
+          disabled={isRefreshing || loading}
+        >
+          <FiRefreshCw size={16} className={isRefreshing ? "spin" : ""} />
         </button>
       </div>
 
-      <div className="deployment-list">
+      <div className="deployment-list" style={{ maxHeight: "380px", overflowY: "auto" }}>
         {loading ? (
           <div className="empty-state">
             <FiLoader className="spin" size={32} />
