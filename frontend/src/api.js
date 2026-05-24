@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "/api",
+  baseURL: import.meta.env.VITE_API_URL || 
+    (import.meta.env.DEV ? "/api" : "https://deployment-task-xqol.onrender.com/api"),
   headers: { "Content-Type": "application/json" },
 });
 
