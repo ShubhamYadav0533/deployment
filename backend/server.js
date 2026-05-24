@@ -43,6 +43,7 @@ app.use((err, req, res, next) => {
 // ─── Database Connection & Server Start ─────────────────────────
 async function start() {
   try {
+    logger.info(`Connecting to primary MongoDB...`);
     await mongoose.connect(config.mongodbUri);
     logger.info("✅ Connected to MongoDB");
 
@@ -50,8 +51,19 @@ async function start() {
       logger.info(`✅ API Server running on http://localhost:${config.port}`);
     });
   } catch (error) {
-    logger.error("Failed to start server:", error);
-    process.exit(1);
+    logger.error(`Failed to connect to primary MongoDB: ${error.stack || error}`);
+    const localUri = "mongodb://127.0.0.1:27017/deployment-platform";
+    logger.info(`⚠️ Attempting fallback connection to local MongoDB: ${localUri}`);
+    try {
+      await mongoose.connect(localUri);
+      logger.info("✅ Connected to fallback local MongoDB successfully!");
+      app.listen(config.port, () => {
+        logger.info(`✅ API Server running on http://localhost:${config.port}`);
+      });
+    } catch (localError) {
+      logger.error(`❌ Failed to start server with local MongoDB fallback: ${localError.stack || localError}`);
+      process.exit(1);
+    }
   }
 }
 

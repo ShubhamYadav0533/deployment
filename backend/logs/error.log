@@ -18,3 +18,156 @@ MongoServerError: bad auth : authentication failed
     at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
     at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
     at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:10:17 [ERROR] Failed to start server: bad auth : authentication failed
+MongoServerError: bad auth : authentication failed
+    at Connection.sendCommand (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:334:26)
+    at async continueScramConversation (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:131:15)
+    at async executeScram (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:80:5)
+    at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
+    at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
+    at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:10:25 [ERROR] Failed to start server: querySrv ENOTFOUND _mongodb._tcp.developer
+Error: querySrv ENOTFOUND _mongodb._tcp.developer
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:292:17)
+2026-05-24 19:11:32 [ERROR] Failed to start server: bad auth : authentication failed
+MongoServerError: bad auth : authentication failed
+    at Connection.sendCommand (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:334:26)
+    at async continueScramConversation (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:131:15)
+    at async executeScram (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:80:5)
+    at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
+    at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
+    at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:11:54 [ERROR] Failed to start worker: bad auth : authentication failed
+MongoServerError: bad auth : authentication failed
+    at Connection.sendCommand (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:334:26)
+    at async continueScramConversation (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:131:15)
+    at async executeScram (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:80:5)
+    at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
+    at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
+    at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:12:21 [ERROR] Failed to start server: bad auth : authentication failed
+MongoServerError: bad auth : authentication failed
+    at Connection.sendCommand (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:334:26)
+    at async continueScramConversation (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:131:15)
+    at async executeScram (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:80:5)
+    at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
+    at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
+    at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:14:00 [ERROR] Failed to connect to primary MongoDB:
+2026-05-24 19:14:07 [ERROR] Failed to connect to primary MongoDB:
+2026-05-24 19:14:26 [ERROR] Failed to connect to primary MongoDB:
+2026-05-24 19:14:33 [ERROR] Worker failed to connect to primary MongoDB:
+2026-05-24 19:14:56 [ERROR] ❌ Failed to start server with local MongoDB fallback:
+2026-05-24 19:15:03 [ERROR] ❌ Failed to start worker with local MongoDB fallback:
+2026-05-24 19:17:03 [ERROR] Failed to connect to primary MongoDB: Error: querySrv ENOTFOUND _mongodb._tcp.developer
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:292:17)
+2026-05-24 19:17:26 [ERROR] Worker failed to connect to primary MongoDB: Error: querySrv ENOTFOUND _mongodb._tcp.developer
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:292:17)
+2026-05-24 19:17:33 [ERROR] ❌ Failed to start server with local MongoDB fallback: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1169:11)
+    at NativeConnection.openUri (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1100:11)
+    at async start (/home/shubham/deployment/backend/server.js:58:7)
+2026-05-24 19:17:56 [ERROR] ❌ Failed to start worker with local MongoDB fallback: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1169:11)
+    at NativeConnection.openUri (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1100:11)
+    at async start (/home/shubham/deployment/backend/worker.js:148:7)
+2026-05-24 19:18:37 [ERROR] Failed to connect to primary MongoDB: Error: querySrv ENOTFOUND _mongodb._tcp.developer
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:292:17)
+2026-05-24 19:19:07 [ERROR] ❌ Failed to start server with local MongoDB fallback: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1169:11)
+    at NativeConnection.openUri (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1100:11)
+    at async start (/home/shubham/deployment/backend/server.js:58:7)
+2026-05-24 19:20:28 [ERROR] Failed to connect to primary MongoDB: MongoServerError: bad auth : authentication failed
+    at Connection.sendCommand (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:334:26)
+    at async continueScramConversation (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:131:15)
+    at async executeScram (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:80:5)
+    at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
+    at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
+    at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:20:58 [ERROR] ❌ Failed to start server with local MongoDB fallback: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1169:11)
+    at NativeConnection.openUri (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1100:11)
+    at async start (/home/shubham/deployment/backend/server.js:58:7)
+2026-05-24 19:23:13 [ERROR] Failed to connect to primary MongoDB: MongoServerError: bad auth : authentication failed
+    at Connection.sendCommand (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:334:26)
+    at async continueScramConversation (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:131:15)
+    at async executeScram (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:80:5)
+    at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
+    at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
+    at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:23:43 [ERROR] ❌ Failed to start server with local MongoDB fallback: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1169:11)
+    at NativeConnection.openUri (/home/shubham/deployment/backend/node_modules/mongoose/lib/connection.js:1100:11)
+    at async start (/home/shubham/deployment/backend/server.js:58:7)
+2026-05-24 19:24:58 [ERROR] Failed to connect to primary MongoDB: MongoServerError: bad auth : authentication failed
+    at Connection.sendCommand (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:306:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Connection.command (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connection.js:334:26)
+    at async continueScramConversation (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:131:15)
+    at async executeScram (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:80:5)
+    at async ScramSHA1.auth (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/auth/scram.js:39:16)
+    at async performInitialHandshake (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:104:13)
+    at async connect (/home/shubham/deployment/backend/node_modules/mongodb/lib/cmap/connect.js:24:9)
+2026-05-24 19:28:43 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:28:44 [ERROR] [Worker] ❌ Deployment 6a13041325faa97aee1f5022 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:28:44 [ERROR] [Worker] Job 6a13041325faa97aee1f5022 failed:
+2026-05-24 19:28:47 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:28:47 [ERROR] [Worker] ❌ Deployment 6a13041325faa97aee1f5022 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:28:47 [ERROR] [Worker] Job 6a13041325faa97aee1f5022 failed:
+2026-05-24 19:28:51 [ERROR] [SSH] Deployment failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:28:51 [ERROR] [Worker] ❌ Deployment 6a13041325faa97aee1f5022 failed: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
+    at Object.readFileSync (node:fs:449:20)
+    at DockerService.deployViaSSH (/home/shubham/deployment/backend/services/dockerService.js:33:29)
+    at DockerService.deploy (/home/shubham/deployment/backend/services/dockerService.js:200:17)
+    at Worker.connection [as processFn] (/home/shubham/deployment/backend/worker.js:46:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/shubham/deployment/backend/node_modules/bullmq/dist/cjs/classes/worker.js:589:32
+2026-05-24 19:28:51 [ERROR] [Worker] Job 6a13041325faa97aee1f5022 failed:

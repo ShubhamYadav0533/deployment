@@ -136,12 +136,22 @@ worker.on("error", (err) => {
 // ─── Connect MongoDB & Start Worker ───────────────────────────────
 async function start() {
   try {
+    logger.info(`Worker connecting to primary MongoDB...`);
     await mongoose.connect(config.mongodbUri);
     logger.info("✅ Worker connected to MongoDB");
     logger.info("✅ Worker listening for deployment jobs...");
   } catch (error) {
-    logger.error("Failed to start worker:", error);
-    process.exit(1);
+    logger.error(`Worker failed to connect to primary MongoDB: ${error.stack || error}`);
+    const localUri = "mongodb://127.0.0.1:27017/deployment-platform";
+    logger.info(`⚠️ Attempting fallback connection to local MongoDB: ${localUri}`);
+    try {
+      await mongoose.connect(localUri);
+      logger.info("✅ Worker connected to fallback local MongoDB successfully!");
+      logger.info("✅ Worker listening for deployment jobs...");
+    } catch (localError) {
+      logger.error(`❌ Failed to start worker with local MongoDB fallback: ${localError.stack || localError}`);
+      process.exit(1);
+    }
   }
 }
 
