@@ -9,12 +9,31 @@ module.exports = {
     process.env.MONGODB_URI || "mongodb://localhost:27017/deployment-platform",
 
   // Redis
-  redis: {
-    host: process.env.REDIS_HOST || "127.0.0.1",
-    port: parseInt(process.env.REDIS_PORT, 10) || 6379,
-    password: process.env.REDIS_PASSWORD || undefined,
-    maxRetriesPerRequest: null,
-  },
+  redis: (() => {
+    if (process.env.REDIS_URL) {
+      try {
+        const parsed = new URL(process.env.REDIS_URL);
+        return {
+          host: parsed.hostname,
+          port: parseInt(parsed.port, 10) || 6379,
+          username: parsed.username || undefined,
+          password: parsed.password || undefined,
+          maxRetriesPerRequest: null,
+          tls: process.env.REDIS_URL.startsWith("rediss://") 
+            ? { rejectUnauthorized: false } 
+            : undefined
+        };
+      } catch (err) {
+        console.error("Failed to parse REDIS_URL, falling back to basic configuration:", err);
+      }
+    }
+    return {
+      host: process.env.REDIS_HOST || "127.0.0.1",
+      port: parseInt(process.env.REDIS_PORT, 10) || 6379,
+      password: process.env.REDIS_PASSWORD || undefined,
+      maxRetriesPerRequest: null,
+    };
+  })(),
 
   // AWS
   aws: {

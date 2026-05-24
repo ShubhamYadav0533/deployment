@@ -49,6 +49,12 @@ async function start() {
 
     app.listen(config.port, () => {
       logger.info(`✅ API Server running on http://localhost:${config.port}`);
+      
+      // Dynamic worker startup in the same process (ideal for free hosting tiers like Render)
+      if (process.env.START_WORKER === "true") {
+        logger.info("⚡ START_WORKER=true detected: Starting background queue worker in-process...");
+        require("./worker.js");
+      }
     });
   } catch (error) {
     logger.error(`Failed to connect to primary MongoDB: ${error.stack || error}`);
@@ -59,6 +65,11 @@ async function start() {
       logger.info("✅ Connected to fallback local MongoDB successfully!");
       app.listen(config.port, () => {
         logger.info(`✅ API Server running on http://localhost:${config.port}`);
+        
+        if (process.env.START_WORKER === "true") {
+          logger.info("⚡ START_WORKER=true detected: Starting background queue worker in-process...");
+          require("./worker.js");
+        }
       });
     } catch (localError) {
       logger.error(`❌ Failed to start server with local MongoDB fallback: ${localError.stack || localError}`);

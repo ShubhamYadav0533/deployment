@@ -333,3 +333,8 @@ Error: ENOENT: no such file or directory, open './keys/ec2-key.pem'
 2026-05-24 19:36:26 [DEBUG] GET /api/deployments
 2026-05-24 19:36:26 [INFO] [Worker] ✅ Deployment 6a1305db939b050e9d4cd2ad completed successfully
 2026-05-24 19:36:26 [INFO] [Worker] Job 6a1305db939b050e9d4cd2ad completed
+2026-05-24 20:07:43 [INFO] Shutting down worker...
+2026-05-24 20:08:08 [INFO] Deploy queue initialized
+2026-05-24 20:08:08 [INFO] Connecting to primary MongoDB...
+2026-05-24 20:08:12 [INFO] ✅ Connected to MongoDB
+2026-05-24 20:08:12 [INFO] ✅ API Server running on http://localhost:5000
